@@ -8,6 +8,7 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Amplified.ValueObjects.Newtonsoft.Json\Amplified.ValueObjects.Newtonsoft.Json.csproj" />
     <ProjectReference Include="..\Amplified.ValueObjects\Amplified.ValueObjects.csproj" />
   </ItemGroup>
 </Project>

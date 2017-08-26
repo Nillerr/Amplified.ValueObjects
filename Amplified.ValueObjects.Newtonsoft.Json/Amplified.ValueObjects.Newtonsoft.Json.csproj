@@ -3,7 +3,6 @@
     <TargetFrameworks>netstandard1.5;net45</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Amplified.ComponentModel.ValueObjects\Amplified.ComponentModel.ValueObjects.csproj" />
     <ProjectReference Include="..\Amplified.ValueObjects\Amplified.ValueObjects.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
