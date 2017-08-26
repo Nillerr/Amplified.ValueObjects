@@ -40,6 +40,10 @@ A aalue object should also implement `IEquatable<TValueObject>` to adhere to cor
 ```c#
 public struct UserId : IValueObject<Guid>, IEquatable<UserId> 
 {
+    private readonly Guid _value;
+    
+    public UserId(Guid value);
+
     Guid IValueObject<Guid>.Value { get; }
     
     public bool Equals(object other);
@@ -58,6 +62,10 @@ Value objects may implement `IComparable<TValueObject>` when it makes sense. An 
 ```c#
 public struct PageNumber : IValueObject<int>, IEquatable<PageNumber>, IComparable<PageNumber>
 {
+    private readonly int _value;
+    
+    public PageNumber(int value);
+    
     int IValueObject<int>.Value { get; }
     
     public bool Equals(object other);
@@ -81,7 +89,11 @@ type conversion operators.
 ```c#
 public struct UserId : IValueObject<Guid>
 {
-    Guid IValueObject<Guid>.Value { get; }
+    private readonly Guid _value;
+    
+    public UserId(Guid value) => _value = value;
+
+    Guid IValueObject<Guid>.Value => _value;
     
     public explicit operator Guid(UserId value) => value.Value;
     public explicit operator Guid?(UserId? value) => value?.Value;
