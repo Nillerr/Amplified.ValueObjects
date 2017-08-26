@@ -12,7 +12,7 @@ Install-Package Amplified.ValueObjects.Newtonsoft.Json
 
 ### See also
 
- - [Amplified.ValueObjects](/Amplified.ValueObjects)
+ - [Amplified.ValueObjects](../Amplified.ValueObjects/)
 
 ## Usage
 
