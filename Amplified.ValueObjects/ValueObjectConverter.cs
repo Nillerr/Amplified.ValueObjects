@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Amplified.ValueObjects.Reflection;
 
 namespace Amplified.ValueObjects
@@ -29,7 +28,9 @@ namespace Amplified.ValueObjects
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             if (sourceType == ValueType)
-                retGuid.GetTypeInfo().IsAssignableFrom(sourceType))
+                return true;
+            
+            if (ValueType.GetTypeInfo().IsAssignableFrom(sourceType))
                 return true;
 
             var sourceConverter = TypeDescriptor.GetConverter(sourceType);

@@ -39,6 +39,7 @@ namespace Amplified.ValueObjects.Reflection
         /// </summary>
         /// <param name="argument">The value argument passed to the value object constructor.</param>
         /// <returns>The new instance of the value object.</returns>
+        /// <exception cref="InvalidCastException"><paramref name="argument"/> is not assignable to <see cref="ValueType"/>.</exception>
         public object Create(object argument) => _constructor(argument);
 
         /// <summary>
