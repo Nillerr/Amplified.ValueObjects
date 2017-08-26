@@ -83,14 +83,14 @@ public struct UserId : IValueObject<Guid>
 {
     Guid IValueObject<Guid>.Value { get; }
     
-    explicit operator Guid(UserId value) => value.Value;
-    explicit operator Guid?(UserId? value) => value?.Value;
+    public explicit operator Guid(UserId value) => value.Value;
+    public explicit operator Guid?(UserId? value) => value?.Value;
 }
 ```
 
 ### Reflection
 
-Value object types supports a set of additional extension method:
+Value object types supports additional type information through the use of extension methods:
 ```c#
 public static bool IsValueObject(this Type type);
 public static ValueObjectTypeInfo GetValueObjectTypeInfo(this Type type);
