@@ -8,10 +8,7 @@ namespace Amplified.ValueObjects.Tests
     {
         private readonly int _value;
        
-        public IntValueObject(int value)
-        {
-            _value = value;
-        }
+        public IntValueObject(int value) => _value = value;
 
         int IValueObject<int>.Value => _value;
 
