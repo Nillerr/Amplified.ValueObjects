@@ -35,7 +35,7 @@ public struct UserId : IValueObject<Guid>
 }
 ```
 
-A aalue object should also implement `IEquatable<TValueObject>` to adhere to correct value object semantics.
+A value object should also implement `IEquatable<TValueObject>` to adhere to correct value object semantics.
 
 ```c#
 public struct UserId : IValueObject<Guid>, IEquatable<UserId> 
