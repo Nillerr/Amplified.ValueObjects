@@ -1,6 +1,7 @@
 # Amplified.ValueObjects
 
-Provides types and reflection information for implementing and working with single-value _[ValueObjects](https://martinfowler.com/bliki/ValueObject.html)_.
+Provides types and reflection information for implementing and working with single-value 
+_[ValueObjects](https://martinfowler.com/bliki/ValueObject.html)_.
 
 ## Installation
 
@@ -41,35 +42,41 @@ public struct UserId : IValueObject<Guid>, IEquatable<UserId>
 {
     Guid IValueObject<Guid>.Value { get; }
     
-    bool Equals(object other);
-    bool Equals(UserId other);
+    public bool Equals(object other);
+    public bool Equals(UserId other);
     
-    bool operator ==(UserId left, UserId right);
-    bool operator !=(UserId left, UserId right);
+    public int GetHashCode();
+    
+    public bool operator ==(UserId left, UserId right);
+    public bool operator !=(UserId left, UserId right);
 }
 ```
 
-Value objects may implement `IComparable<TValueObject>` when it makes sense. An example of this is the value object `PageNumber`.
+Value objects may implement `IComparable<TValueObject>` when it makes sense. An example of this is the value object 
+`PageNumber`.
 
 ```c#
 public struct PageNumber : IValueObject<int>, IEquatable<PageNumber>, IComparable<PageNumber>
 {
     int IValueObject<int>.Value { get; }
     
-    bool Equals(object other);
-    bool Equals(PageNumber other);
+    public bool Equals(object other);
+    public bool Equals(UserId other);
     
-    bool operator ==(PageNumber left, PageNumber right);
-    bool operator !=(PageNumber left, PageNumber right);
+    public int GetHashCode();
     
-    int CompareTo(PageNumber other);
+    public bool operator ==(PageNumber left, PageNumber right);
+    public bool operator !=(PageNumber left, PageNumber right);
     
-    int operator >(PageNumber left, PageNumber right);
-    int operator <(PageNumber left, PageNumber right);
+    public int CompareTo(PageNumber other);
+    
+    public int operator >(PageNumber left, PageNumber right);
+    public int operator <(PageNumber left, PageNumber right);
 }
 ```
 
-We recommend hiding the value behind the explicit implementation of `IValueObject<T>`, and exposing it using explicit type conversion operators.
+We recommend hiding the value behind the explicit implementation of `IValueObject<T>`, and exposing it using explicit 
+type conversion operators.
 
 ```c#
 public struct UserId : IValueObject<Guid>
@@ -89,7 +96,10 @@ public static bool IsValueObject(this Type type);
 public static ValueObjectTypeInfo GetValueObjectTypeInfo(this Type type);
 ```
 
-Calling `IsValueObject` on any type is allowed, while calling `GetValueObjectTypeInfo` on non-ValueObject types, will result in an exception being thrown. You should always call `IsValueObject` before `GetValueObjectTypeInfo`, if you do not for sure that the type represents a ValueObject. The type information returned by either of these is cached, so the overhead is neglible. 
+Calling `IsValueObject` on any type is allowed, while calling `GetValueObjectTypeInfo` on non-ValueObject types, will 
+result in an exception being thrown. You should always call `IsValueObject` before `GetValueObjectTypeInfo`, if you do 
+not for sure that the type represents a ValueObject. The type information returned by either of these is cached, so the 
+overhead is minimal. 
 
 #### ValueObjectTypeInfo
 
