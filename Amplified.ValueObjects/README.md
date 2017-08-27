@@ -137,6 +137,11 @@ public object GetValueObjectValue(object instance)
 }
 ```
 
+## Limitations
+
+ - Using the provided `ValueObjectConverter` for type conversion (& model binding in ASP.NET MVC) requires targeting .NET Core or .NET Framework 4.6 
+ (or higher). 
+
 ## License
 
 MIT License

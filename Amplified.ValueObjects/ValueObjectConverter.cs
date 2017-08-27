@@ -6,6 +6,14 @@ using Amplified.ValueObjects.Reflection;
 
 namespace Amplified.ValueObjects
 {
+    public sealed class ValueObjectConverter : TypeConverter
+    {
+        public ValueObjectConverter(Type type)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    
     public sealed class ValueObjectConverter<TValueObject, TValue> : TypeConverter
         where TValueObject : IValueObject<TValue>
     {

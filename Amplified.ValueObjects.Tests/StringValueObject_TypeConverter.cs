@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Reflection;
 using Xunit;
 
 namespace Amplified.ValueObjects.Tests
@@ -19,6 +20,13 @@ namespace Amplified.ValueObjects.Tests
             var converter1 = TypeDescriptor.GetConverter(typeof(StringValueObject));
             var converter2 = TypeDescriptor.GetConverter(typeof(StringValueObject));
             Assert.Same(converter1, converter2);
+        }
+        
+        [Fact]
+        public void GetConverterReturnsValueObjectConverter()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(StringValueObject));
+            Assert.IsType<ValueObjectConverter<StringValueObject, string>>(converter);
         }
 
         [Fact]

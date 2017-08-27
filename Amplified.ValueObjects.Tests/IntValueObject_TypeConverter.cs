@@ -20,6 +20,13 @@ namespace Amplified.ValueObjects.Tests
             var converter2 = TypeDescriptor.GetConverter(typeof(IntValueObject));
             Assert.Same(converter1, converter2);
         }
+        
+        [Fact]
+        public void GetConverterReturnsValueObjectConverter()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(IntValueObject));
+            Assert.IsType<ValueObjectConverter<IntValueObject, int>>(converter);
+        }
 
         [Fact]
         public void CanConvertFromInt()

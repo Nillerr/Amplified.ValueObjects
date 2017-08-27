@@ -6,10 +6,13 @@ namespace Amplified.ValueObjects.Tests.Newtonsoft.Json
 {
     public sealed class JsonConverter
     {
-        private readonly JsonSerializerSettings _settings = new JsonSerializerSettings()
+        private readonly JsonSerializerSettings _settings;
+        
+        public JsonConverter()
         {
-            Converters = {new ValueObjectJsonConverter()}
-        };
+            _settings = new JsonSerializerSettings();
+            _settings.Converters.Add(new ValueObjectJsonConverter());
+        }
         
         [Fact]
         public void ConvertIntValue()
