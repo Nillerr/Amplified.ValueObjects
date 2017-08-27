@@ -5,12 +5,6 @@ using System.Reflection;
 
 namespace Amplified.ValueObjects
 {
-    public abstract class ValueObjectFactory<TValueObject, TValue>
-        where TValueObject : IValueObject<TValue>
-    {
-        public abstract TValueObject Create();
-    }
-    
     public static class ValueObjectTypeConverters
     {
         /// <summary>
