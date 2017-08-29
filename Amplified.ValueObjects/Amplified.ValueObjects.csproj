@@ -1,7 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard1.5;net452</TargetFrameworks>
+    <RootNamespace>Amplified.ValueObjects</RootNamespace>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <Version>1.0.0</Version>
+    <Authors>Nicklas Jensen</Authors>
+    <Company />
+    <Product>Amplified.ValueObjects</Product>
+    <Description>Facilitates the ValueObject pattern by providing a scheme for creating value objects, as well as type conversion and serialization of value objects.</Description>
+    <Copyright>Nicklas Jensen</Copyright>
+    <PackageLicenseUrl>https://github.com/Nillerr/Amplified.ValueObjects/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Nillerr/Amplified.ValueObjects</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nillerr/Amplified.ValueObjects</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ValueObject,ValueObjects</PackageTags>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
