@@ -1,11 +1,13 @@
 # Amplified.ValueObjects
 
+![NuGet](https://img.shields.io/nuget/v/Amplified.ValueObjects.svg) 
+
 Provides types and reflection information for implementing and working with single-value 
 _[ValueObjects](https://martinfowler.com/bliki/ValueObject.html)_.
 
 ## Installation
 
-The library is available on [NuGet](https://www.nuget.org/packages/Amplified.CSharp).
+The library is available on [NuGet](https://www.nuget.org/packages/Amplified.ValueObjects).
 
 ```
 Install-Package Amplified.ValueObjects
