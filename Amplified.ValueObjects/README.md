@@ -15,7 +15,7 @@ Install-Package Amplified.ValueObjects
 
 ### See also
 
- - [Amplified.ValueObjects.Newtonsoft.Json](Amplified.ValueObjects.Newtonsoft.Json/)
+ - [Amplified.ValueObjects.Newtonsoft.Json](../Amplified.ValueObjects.Newtonsoft.Json)
 
 ## Usage
 
