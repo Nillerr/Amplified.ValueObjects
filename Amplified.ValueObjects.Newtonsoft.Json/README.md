@@ -1,5 +1,7 @@
 # Amplified.ValueObjects.Newtonsoft.Json
 
+![NuGet](https://img.shields.io/nuget/v/Amplified.ValueObjects.Newtonsoft.Json.svg) 
+
 Json serialization of _[ValueObjects](https://martinfowler.com/bliki/ValueObject.html)_ using `Newtonsoft.Json`.
 
 ## Installation
